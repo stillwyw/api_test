@@ -45,6 +45,13 @@ group :development do
   gem 'spring'
 end
 
+# authentications
 gem 'devise'
 gem 'doorkeeper'
+gem 'wine_bouncer', '~> 1.0.1'
+# api building
 gem 'grape'
+
+# styling 
+gem 'twitter-bootstrap-rails'
+gem "font-awesome-rails"
