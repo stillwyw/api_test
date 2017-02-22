@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require vex.combined.min
 //= require jquery-ui
-//= require vue.min
+//= require vue
 //= require vue-router
 //= require oauth
 //= require site

@@ -186,10 +186,40 @@ var ready = function() {
           }
         }).done(function() {
           vex.dialog.alert("Pre-Checking Request has been successfully sent. :)");
+          App.displayHotelModal = false;
         })
       }
     }
   });
+  
+  Vue.component('login-popup', {
+    template: '#login-page',
+    props: ['username', 'password'],
+    methods: {
+      fetchUserProfile: function() {
+        var self = this;
+        return OauthRequest({
+          url: baseUrl + '/api/v0/user.json'
+        }).done(function(data) {
+          window.localStorage.user_id = data.id
+        })
+      },
+      login: function () {
+        var self = this;
+        Oauth.getToken(baseUrl + '/oauth/token', this.username, this.password)
+          .done(function(data) {
+            window.localStorage.access_token = data.access_token;
+            // fetch user profile:id for loading user resources.
+            self.fetchUserProfile()
+              .done(function() {
+                self.$router.go("/user");
+              });
+          }).error(function(err) {
+            vex.dialog.alert(err.responseText)
+          })
+      }
+    }
+  })
 
   var HotelItem = Vue.component('hotel-item', {
     props: ['hotel'],
@@ -202,8 +232,13 @@ var ready = function() {
         return ''
       },
       clicked: function() {
-        App.displayHotelModal = true;
-        App.currentHotel = this.hotel
+        if (loggedIn()) {
+          App.displayHotelModal = true;
+          App.currentHotel = this.hotel
+        }else{
+          App.displayLoginPopup = true;
+        }
+
       }
     }
   });
@@ -227,6 +262,7 @@ var ready = function() {
       authorization_code: undefined,
       hotels: [],
       displayHotelModal: false,
+      displayLoginPopup: false,
       currentHotel: undefined
     },
     methods: {

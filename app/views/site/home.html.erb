@@ -34,6 +34,8 @@
   
   <hotel-popup v-if="displayHotelModal" v-bind:hotel="currentHotel" @close="displayHotelModal = false"></hotel-popup>
   
+  <login-popup v-if="displayLoginPopup" @close="displayLoginPopup = false"></login-popup>
+  
   <div id="map">
 
   </div>
@@ -48,9 +50,9 @@
         <div class="modal-container">
 
           <div class="modal-header">
-            <slot name="header">
+            <h4 name="header">
               {{hotel.name}}
-            </slot>
+            </h4>
           </div>
 
           <div class="modal-body">
@@ -82,9 +84,9 @@
         <div class="modal-container">
 
           <div class="modal-header">
-            <slot name="header">
+            <h4 name="header">
               Please Login
-            </slot>
+            </h4>
           </div>
 
           <div class="modal-body">
