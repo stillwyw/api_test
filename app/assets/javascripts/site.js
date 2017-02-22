@@ -222,12 +222,18 @@ var ready = function() {
   var HotelItem = Vue.component('hotel-item', {
     props: ['hotel'],
     template: '<div class="hotel-item" v-on:click="clicked">\
-                  <img v-bind:src="this.photo()" class="img-responsive"/>\
+                  <div class="img-wrapper">\
+                    <img v-bind:src="this.photo()" class="img-responsive"/>\
+                  </div>\
                   <h4>{{hotel.name}}</h4>\
                </div>',
     methods: {
       photo: function() {
-        return ''
+        if (this.hotel.photos) {
+          return this.hotel.photos[0].getUrl({ 'maxWidth': 600, 'maxHeight': 800 });
+        }else{
+          return ''
+        }
       },
       clicked: function() {
         if (loggedIn()) {

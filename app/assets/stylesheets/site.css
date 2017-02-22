@@ -1,7 +1,12 @@
 body,html{
+  font-family: 'Roboto', sans-serif;
   height: 100%;
   width: 100%;
   background-color: #f2f2f2;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -39,6 +44,13 @@ footer{
   border-radius: 3px;
   padding: 10px;
   margin: 10px 0;
+}
+
+.hotel-item .img-wrapper{
+  width: 100%;
+  background-color: #ccc;
+  height:300px;
+  overflow: hidden;
 }
 .checkin-item:hover, .hotel-item:hover{
   cursor: pointer;
