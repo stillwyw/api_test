@@ -19,4 +19,5 @@
 //= require vue
 //= require vue-router
 //= require oauth
+//= require_tree ./app
 //= require site

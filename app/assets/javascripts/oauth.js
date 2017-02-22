@@ -25,7 +25,19 @@ Oauth.requestToken = function (url, username, password) {
 Oauth.getToken = function (url, username, password) {
   return this.requestToken(url, username, password)
 }
-// Oauth.getToken('http://127.0.0.1:3000/oauth/token', 'yunwei2@pafoods.cn', 'password', function (data) {
-//   console.log(data);
-// })
-//
+
+Oauth.request = function(option) {
+  data = option.data ? option.data : {};
+  data.access_token = window.localStorage.access_token;
+  return $.ajax({
+    url: option.url,
+    type: option['type'],
+    headers: {
+      'access_token': window.localStorage.access_token
+    },
+    data: data
+  }).error(function(error) {
+    console.log(error);
+    vex.dialog.alert(error.responseJSON.error)
+  });
+}
