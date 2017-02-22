@@ -10,7 +10,7 @@ var ready = function() {
 
   var OauthRequest = function(option) {
     var self = this;
-    data = option.data ? option.data : {}
+    data = option.data ? option.data : {};
     data.access_token = window.localStorage.access_token;
     return $.ajax({
       url: option.url,
@@ -45,11 +45,12 @@ var ready = function() {
       loadCheckins: function() {
         var self = this;
         OauthRequest({
-          url: '/api/v0/users/' + self.user_id + '/precheckin_requests.json',
-        }).done(function(data) {
-          console.log(data);
-          self.checkins = data;
-        });
+            url: '/api/v0/users/' + self.user_id + '/precheckin_requests.json',
+          })
+          .done(function(data) {
+            console.log(data);
+            self.checkins = data;
+          });
       }
     }
   })
@@ -66,7 +67,8 @@ var ready = function() {
     },
     methods: {
       initializeMap: function() {
-        var pyrmont = new google.maps.LatLng(31.2304, 121.4737);
+        // picked shanghai as the point.
+        var shanghai = new google.maps.LatLng(31.2304, 121.4737);
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
@@ -74,7 +76,7 @@ var ready = function() {
         });
 
         var request = {
-          location: pyrmont,
+          location: shanghai,
           radius: '500',
           query: 'hotel'
         };
@@ -104,16 +106,17 @@ var ready = function() {
       },
       login: function() {
         var self = this;
-        Oauth.getToken(baseUrl + '/oauth/token', this.username, this.password).done(function(data) {
-          window.localStorage.access_token = data.access_token;
-          // fetch user profile:id for loading user resources.
-          self.fetchUserProfile()
-            .done(function() {
-              self.$router.go("/user");
-            });
-        }).error(function(err) {
-          vex.dialog.alert(err.responseText)
-        })
+        Oauth.getToken(baseUrl + '/oauth/token', this.username, this.password)
+          .done(function(data) {
+            window.localStorage.access_token = data.access_token;
+            // fetch user profile:id for loading user resources.
+            self.fetchUserProfile()
+              .done(function() {
+                self.$router.go("/user");
+              });
+          }).error(function(err) {
+            vex.dialog.alert(err.responseText)
+          })
       }
     }
   })
@@ -144,8 +147,9 @@ var ready = function() {
     }
   }]
 
+
   const router = new VueRouter({
-    routes
+    routes: routes
   })
 
 
