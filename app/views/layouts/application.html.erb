@@ -35,44 +35,12 @@
     <![endif]-->
   </head>
   <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">ApiTest</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li>
-              <%= link_to do %>
-                <i class="fa fa-building"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to do %>
-                <i class="fa fa-user"></i>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-3 main-container">
-          <%= bootstrap_flash %>
-          <%= yield %>
-          <footer>
-            <p>&copy; Company 2017</p>
-          </footer>
-        </div>
-        
-      </div><!--/row-->
+  <%= yield %>
 
-    </div> <!-- /container -->
+  <footer>
+    <p>&copy; Company 2017</p>
+  </footer>
     
     
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMKxe99R5py9kmq5eqoZynHQiMlPxNpk&libraries=places"></script>

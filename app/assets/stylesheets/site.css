@@ -1,13 +1,19 @@
 body,html{
   height: 100%;
+  width: 100%;
   background-color: #f2f2f2;
 }
 
-.main-container{
-  position: relative;
+body{
+  padding-top: 50px;
 }
 
 #app{
+  width:100%;
+  height: 100%;
+}
+
+.main-container{
   position: relative;
 }
 
@@ -18,24 +24,31 @@ body,html{
   width: 200px;
   height: 100px;
   z-index: 999;
+  opacity: 0;
 }
 
-.hotel-item{
+footer{
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+}
+
+.checkin-item,.hotel-item{
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   padding: 10px;
   margin: 10px 0;
 }
-.hotel-item:hover{
+.checkin-item:hover, .hotel-item:hover{
   cursor: pointer;
 }
 
-modal-mask {
+.modal-mask {
+  z-index: 200;
   position: fixed;
-  z-index: 9998;
   top: 0;
-  left: 0;
+  left:0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
@@ -68,18 +81,18 @@ modal-mask {
   margin: 20px 0;
 }
 
+.modal-body .date-input{
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
 .modal-default-button {
   float: right;
 }
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
 
 .modal-enter {
   opacity: 0;
@@ -93,4 +106,13 @@ modal-mask {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for <2.1.8 */ {
+  opacity: 0;
 }

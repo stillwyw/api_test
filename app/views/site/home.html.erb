@@ -1,15 +1,46 @@
 <div id="app">
-  <ul>
-    <hotel-item v-for="hotel in hotels" v-bind:hotel="hotel"></hotel-item>
-  </ul>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ApiTest</a>
+      <div class="navbar-collapse collapse navbar-responsive-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li>
+            <router-link to="/"><i class="fa fa-building"></i></router-link>
+          </li>
+          <li>
+            <router-link to="/user"><i class="fa fa-user"></i></router-link>          
+          </li>
+          <li v-if="loggedIn">
+            <a href="javascript:;" v-on:click="logout">
+              <i class="fa fa-sign-out"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <router-view></router-view>
+        </div>
+      </div>
+  </div>
   
-  <hotel-popup v-if="display" v-bind:hotel="currentHotel" @close="display = false"></hotel-popup>
+  <hotel-popup v-if="displayHotelModal" v-bind:hotel="currentHotel" @close="displayHotelModal = false"></hotel-popup>
   
   <div id="map">
 
   </div>
 </div>
 
+
+<!-- checkin modal -->
 <script type="text/x-template" id="modal-template">
   <transition name="modal">
     <div class="modal-mask">
@@ -24,13 +55,15 @@
 
           <div class="modal-body">
             <slot name="body">
-              
+              <input name="arrival_date" type="text" class="date-input" placeholder="Arrival date"  v-model="arrival_date" />
+              <input name="checkout_date" type="text" class="date-input" placeholder="Checkout date" v-model="checkout_date"/>
             </slot>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button" @click="$emit('close')">
+              <button class="btn btn-success" @click="precheckin">Pre-Checkin</button>
+              <button class="modal-default-button btn" @click="$emit('close')">
                 Close
               </button>
             </slot>
@@ -40,3 +73,52 @@
     </div>
   </transition>
 </script>
+
+<!-- Login modal -->
+<script type="text/x-template" id="login-page">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <slot name="header">
+              Please Login
+            </slot>
+          </div>
+
+          <div class="modal-body">
+            <slot name="body">
+              <input name="arrival_date" type="text" class="date-input" placeholder="arrival date" v-model="username" />
+              <input name="checkout_date" type="password" class="date-input" placeholder="checkout date"v-model="password" />
+            </slot>
+          </div>
+
+          <div class="modal-footer">
+            <slot name="footer">
+              <button class="btn btn-success" @click="login">login</button>
+              <router-link class="btn btn-default" to="/">Cancel</router-link>
+            </slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+<script type="text/x-template" id="user-page">
+  <transition name="component-fade" mode="out-in">
+    <ul>
+      <precheckin-item v-for="checkin in checkins" v-bind:checkin="checkin"></precheckin-item>
+    </ul>
+  </transition>
+</script>
+
+<script type="text/x-template" id="home-page">
+  <transition name="component-fade" mode="out-in">
+    <ul>
+      <hotel-item v-for="hotel in hotels" v-bind:hotel="hotel"></hotel-item>
+    </ul>
+  </transition>
+</script>
+

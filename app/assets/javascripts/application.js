@@ -14,6 +14,11 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require jso
+//= require vex.combined.min
+//= require moment
+//= require jquery-ui
 //= require vue
+//= require vuex
+//= require vue-router
+//= require oauth
 //= require site

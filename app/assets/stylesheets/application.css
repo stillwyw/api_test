@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require_tree .
- *= require_self
+ *= require bootstrap_and_overrides
+ *= require vex
+ *= require vex-theme-wireframe
+ *= require jquery-ui
+ *= require site
  */
