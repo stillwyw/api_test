@@ -71,7 +71,7 @@ var ready = function() {
         var shanghai = new google.maps.LatLng(31.2304, 121.4737);
 
         map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
+          center: shanghai,
           zoom: 15
         });
 
