@@ -15,7 +15,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require vex.combined.min
-//= require moment
 //= require jquery-ui
 //= require vue
 //= require vuex
