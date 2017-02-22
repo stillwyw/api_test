@@ -4,7 +4,7 @@
 
 var Oauth = {grant_type: 'password'}
 
-Oauth.client_id = 'dae2e987242a08fe8c6e68e9246cded964eaa7b7ea609a8ad449bd51ead5b728'
+Oauth.client_id = window.client_id;
 
 Oauth.state = function () {
   return Date.now() + "" + Math.random()

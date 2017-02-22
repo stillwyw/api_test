@@ -12,10 +12,15 @@
           <li>
             <router-link to="/"><i class="fa fa-building"></i></router-link>
           </li>
-          <li>
+          <li v-if="loggedIn()">
             <router-link to="/user"><i class="fa fa-user"></i></router-link>          
           </li>
-          <li v-if="loggedIn">
+          <li v-if="!loggedIn()">
+            <a href="javascript:;" v-on:click="displayLoginPopup = true">
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li v-if="loggedIn()">
             <a href="javascript:;" v-on:click="logout">
               <i class="fa fa-sign-out"></i>
             </a>
@@ -76,7 +81,7 @@
   </transition>
 </script>
 
-<!-- Login modal -->
+<!-- Login page, in case user intentionally tries /user in browser address -->
 <script type="text/x-template" id="login-page">
   <transition name="modal">
     <div class="modal-mask">
@@ -99,7 +104,39 @@
           <div class="modal-footer">
             <slot name="footer">
               <button class="btn btn-success" @click="login">Login</button>
-              <router-link class="btn btn-default" to="/">Cancel</router-link>
+              <router-link class="btn btn-default"  to="/">Cancel</router-link>
+            </slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+<!-- Login popup -->
+<script type="text/x-template" id="login-popup">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <h4 name="header">
+              Please Login
+            </h4>
+          </div>
+
+          <div class="modal-body">
+            <slot name="body">
+              <input name="arrival_date" type="text" class="date-input" placeholder="Email" v-model="username" />
+              <input name="checkout_date" type="password" class="date-input" placeholder="Password"v-model="password" />
+            </slot>
+          </div>
+
+          <div class="modal-footer">
+            <slot name="footer">
+              <button class="btn btn-success" @click="login">Login</button>
+              <button class="btn btn-default" @click="$emit('close')">Cancel</button>
             </slot>
           </div>
         </div>

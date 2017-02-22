@@ -1,8 +1,6 @@
 var map;
 var service;
 var infowindow;
-var baseUrl = 'http://127.0.0.1:3000';
-
 //for alert
 vex.defaultOptions.className = 'vex-theme-wireframe';
 
@@ -99,14 +97,14 @@ var ready = function() {
       fetchUserProfile: function() {
         var self = this;
         return OauthRequest({
-          url: baseUrl + '/api/v0/user.json'
+          url: window.base_url + '/api/v0/user.json'
         }).done(function(data) {
           window.localStorage.user_id = data.id
         })
       },
       login: function() {
         var self = this;
-        Oauth.getToken(baseUrl + '/oauth/token', this.username, this.password)
+        Oauth.getToken(window.base_url + '/oauth/token', this.username, this.password)
           .done(function(data) {
             window.localStorage.access_token = data.access_token;
             // fetch user profile:id for loading user resources.
@@ -193,20 +191,20 @@ var ready = function() {
   });
   
   Vue.component('login-popup', {
-    template: '#login-page',
-    props: ['username', 'password'],
+    template: '#login-popup',
+    props: ['username', 'password', 'displayLoginPopup'],
     methods: {
       fetchUserProfile: function() {
         var self = this;
         return OauthRequest({
-          url: baseUrl + '/api/v0/user.json'
+          url: window.base_url + '/api/v0/user.json'
         }).done(function(data) {
           window.localStorage.user_id = data.id
         })
       },
       login: function () {
         var self = this;
-        Oauth.getToken(baseUrl + '/oauth/token', this.username, this.password)
+        Oauth.getToken(window.base_url + '/oauth/token', this.username, this.password)
           .done(function(data) {
             window.localStorage.access_token = data.access_token;
             // fetch user profile:id for loading user resources.
