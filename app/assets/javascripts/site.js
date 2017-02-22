@@ -173,7 +173,7 @@ var ready = function() {
       precheckin: function() {
         var self = this;
         OauthRequest({
-          url: 'http://127.0.0.1:3000/api/v0/users/' + window.localStorage.user_id + '/precheckin_requests.json',
+          url: window.base_url + '/api/v0/users/' + window.localStorage.user_id + '/precheckin_requests.json',
           type: 'POST',
           data: {
             precheckin_request: {
