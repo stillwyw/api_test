@@ -12,7 +12,7 @@ var ready = function() {
     data.access_token = window.localStorage.access_token;
     return $.ajax({
       url: option.url,
-      type: option.type,
+      type: option['type'],
       headers: {
         'access_token': window.localStorage.access_token
       },
@@ -43,7 +43,7 @@ var ready = function() {
       loadCheckins: function() {
         var self = this;
         OauthRequest({
-            url: '/api/v0/users/' + self.user_id + '/precheckin_requests.json',
+            url: '/api/v0/users/' + self.user_id + '/precheckin_requests.json'
           })
           .done(function(data) {
             console.log(data);
@@ -110,7 +110,7 @@ var ready = function() {
             // fetch user profile:id for loading user resources.
             self.fetchUserProfile()
               .done(function() {
-                self.$router.go("/user");
+                self.$router.push("/user");
               });
           }).error(function(err) {
             vex.dialog.alert(err.responseText)
@@ -210,7 +210,7 @@ var ready = function() {
             // fetch user profile:id for loading user resources.
             self.fetchUserProfile()
               .done(function() {
-                self.$router.go("/user");
+                self.$emit('close');
               });
           }).error(function(err) {
             vex.dialog.alert(err.responseText)
@@ -267,7 +267,7 @@ var ready = function() {
       loggedIn: loggedIn,
       logout: function() {
         window.localStorage.removeItem('access_token');
-        App.$router.go("/");
+        App.$router.push("/");
       }
     }
   }); // end of App
