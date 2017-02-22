@@ -1,4 +1,3 @@
-// TODO: turn on production mode.
 var map;
 var service;
 var infowindow;
