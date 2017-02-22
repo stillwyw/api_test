@@ -89,14 +89,14 @@
 
           <div class="modal-body">
             <slot name="body">
-              <input name="arrival_date" type="text" class="date-input" placeholder="arrival date" v-model="username" />
-              <input name="checkout_date" type="password" class="date-input" placeholder="checkout date"v-model="password" />
+              <input name="arrival_date" type="text" class="date-input" placeholder="Email" v-model="username" />
+              <input name="checkout_date" type="password" class="date-input" placeholder="Password"v-model="password" />
             </slot>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="btn btn-success" @click="login">login</button>
+              <button class="btn btn-success" @click="login">Login</button>
               <router-link class="btn btn-default" to="/">Cancel</router-link>
             </slot>
           </div>
@@ -109,6 +109,7 @@
 <script type="text/x-template" id="user-page">
   <transition name="component-fade" mode="out-in">
     <ul>
+      <h2>Your pre-checkin requests</h2>
       <precheckin-item v-for="checkin in checkins" v-bind:checkin="checkin"></precheckin-item>
     </ul>
   </transition>
@@ -117,6 +118,7 @@
 <script type="text/x-template" id="home-page">
   <transition name="component-fade" mode="out-in">
     <ul>
+      <h2>Hotels</h2>
       <hotel-item v-for="hotel in hotels" v-bind:hotel="hotel"></hotel-item>
     </ul>
   </transition>

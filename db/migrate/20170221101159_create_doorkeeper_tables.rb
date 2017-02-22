@@ -65,7 +65,5 @@ class CreateDoorkeeperTables < ActiveRecord::Migration
       column: :application_id
     )
     
-    # add foreign key to users table
-    add_foreign_key :table_name, :users, column: :resource_owner_id
   end
 end
