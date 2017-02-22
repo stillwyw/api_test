@@ -251,9 +251,10 @@ var ready = function() {
     props: ['checkin'],
     template: '<div class="checkin-item" >\
                   <h4>{{checkin.hotel}}</h4>\
-                  <p>\
-                    <b>Arrival: {{checkin.arrival_date}}</b>\
-                    <b>Departure: {{checkin.checkout_date}}</b>\
+                  <hr/>\
+                  <p class="mute">\
+                    <span>Arrival: {{checkin.arrival_date}}</span>\
+                     / <span>Departure: {{checkin.checkout_date}}</span>\
                   </p>\
               </div>'
   });

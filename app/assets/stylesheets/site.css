@@ -9,6 +9,10 @@ h1,h2,h3,h4{
   font-family: 'Roboto', sans-serif;
 }
 
+h2.page-header{
+  color: #ccc;
+}
+
 body{
   padding-top: 50px;
 }
