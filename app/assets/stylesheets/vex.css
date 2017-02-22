@@ -1,62 +1,102 @@
 @keyframes vex-fadein {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+
+}
 
 @-webkit-keyframes vex-fadein {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+
+}
 
 @-moz-keyframes vex-fadein {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+
+}
 
 @-ms-keyframes vex-fadein {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+
+}
 
 @-o-keyframes vex-fadein {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+
+}
 
 @keyframes vex-fadeout {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+
+}
 
 @-webkit-keyframes vex-fadeout {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+
+}
 
 @-moz-keyframes vex-fadeout {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+
+}
 
 @-ms-keyframes vex-fadeout {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+
+}
 
 @-o-keyframes vex-fadeout {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+
+}
 
 @keyframes vex-rotation {
   0% {
@@ -64,13 +104,17 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg); }
+    -o-transform: rotate(0deg);
+  }
   100% {
     transform: rotate(359deg);
     -webkit-transform: rotate(359deg);
     -moz-transform: rotate(359deg);
     -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg); } }
+    -o-transform: rotate(359deg);
+  }
+
+}
 
 @-webkit-keyframes vex-rotation {
   0% {
@@ -78,13 +122,17 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg); }
+    -o-transform: rotate(0deg);
+  }
   100% {
     transform: rotate(359deg);
     -webkit-transform: rotate(359deg);
     -moz-transform: rotate(359deg);
     -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg); } }
+    -o-transform: rotate(359deg);
+  }
+
+}
 
 @-moz-keyframes vex-rotation {
   0% {
@@ -92,13 +140,17 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg); }
+    -o-transform: rotate(0deg);
+  }
   100% {
     transform: rotate(359deg);
     -webkit-transform: rotate(359deg);
     -moz-transform: rotate(359deg);
     -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg); } }
+    -o-transform: rotate(359deg);
+  }
+
+}
 
 @-ms-keyframes vex-rotation {
   0% {
@@ -106,13 +158,17 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg); }
+    -o-transform: rotate(0deg);
+  }
   100% {
     transform: rotate(359deg);
     -webkit-transform: rotate(359deg);
     -moz-transform: rotate(359deg);
     -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg); } }
+    -o-transform: rotate(359deg);
+  }
+
+}
 
 @-o-keyframes vex-rotation {
   0% {
@@ -120,18 +176,23 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg); }
+    -o-transform: rotate(0deg);
+  }
   100% {
     transform: rotate(359deg);
     -webkit-transform: rotate(359deg);
     -moz-transform: rotate(359deg);
     -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg); } }
+    -o-transform: rotate(359deg);
+  }
+
+}
 
 .vex, .vex *, .vex *:before, .vex *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .vex {
   position: fixed;
@@ -141,19 +202,22 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+}
 
 .vex-scrollbar-measure {
   position: absolute;
   top: -9999px;
   width: 50px;
   height: 50px;
-  overflow: scroll; }
+  overflow: scroll;
+}
 
 .vex-overlay {
   background: #000;
   filter: alpha(opacity=40);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+}
 
 .vex-overlay {
   animation: vex-fadein 0.5s;
@@ -167,14 +231,16 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
-  .vex.vex-closing .vex-overlay {
-    animation: vex-fadeout 0.5s;
-    -webkit-animation: vex-fadeout 0.5s;
-    -moz-animation: vex-fadeout 0.5s;
-    -ms-animation: vex-fadeout 0.5s;
-    -o-animation: vex-fadeout 0.5s;
-    -webkit-backface-visibility: hidden; }
+  left: 0;
+}
+.vex.vex-closing .vex-overlay {
+  animation: vex-fadeout 0.5s;
+  -webkit-animation: vex-fadeout 0.5s;
+  -moz-animation: vex-fadeout 0.5s;
+  -ms-animation: vex-fadeout 0.5s;
+  -o-animation: vex-fadeout 0.5s;
+  -webkit-backface-visibility: hidden;
+}
 
 .vex-content {
   animation: vex-fadein 0.5s;
@@ -183,28 +249,33 @@
   -ms-animation: vex-fadein 0.5s;
   -o-animation: vex-fadein 0.5s;
   -webkit-backface-visibility: hidden;
-  background: #fff; }
-  .vex.vex-closing .vex-content {
-    animation: vex-fadeout 0.5s;
-    -webkit-animation: vex-fadeout 0.5s;
-    -moz-animation: vex-fadeout 0.5s;
-    -ms-animation: vex-fadeout 0.5s;
-    -o-animation: vex-fadeout 0.5s;
-    -webkit-backface-visibility: hidden; }
+  background: #fff;
+}
+.vex.vex-closing .vex-content {
+  animation: vex-fadeout 0.5s;
+  -webkit-animation: vex-fadeout 0.5s;
+  -moz-animation: vex-fadeout 0.5s;
+  -ms-animation: vex-fadeout 0.5s;
+  -o-animation: vex-fadeout 0.5s;
+  -webkit-backface-visibility: hidden;
+}
 
 .vex-close:before {
   font-family: Arial, sans-serif;
-  content: "\00D7"; }
+  content: "\00D7";
+}
 
 .vex-dialog-form {
-  margin: 0; }
+  margin: 0;
+}
 
 .vex-dialog-button {
   text-rendering: optimizeLegibility;
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+}
 
 .vex-loading-spinner {
   animation: vex-rotation 0.7s linear infinite;
@@ -225,7 +296,9 @@
   left: 0;
   height: 2em;
   width: 2em;
-  background: #fff; }
+  background: #fff;
+}
 
 body.vex-open {
-  overflow: hidden; }
+  overflow: hidden;
+}
