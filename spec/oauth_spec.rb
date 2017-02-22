@@ -11,7 +11,8 @@ RSpec.describe "OAUTH authentication flow tests" do
     token = client.password.get_token('yunwei2@pafoods.cn', 'password')
     response = token.get("/api/v0/user")
     
-    puts response.body
+    parsed_body = JSON.parse(response.body)
+    expect(parsed_body).not_to be_empty
   end
   
   it "should allow authorization flow" do
@@ -26,9 +27,6 @@ RSpec.describe "OAUTH authentication flow tests" do
     
     
     response = token.get('/api/v0/precheckin_requests.json')
-    
-    puts response.body
-    
     
   end
 end
