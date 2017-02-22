@@ -17,7 +17,6 @@
 //= require vex.combined.min
 //= require jquery-ui
 //= require vue
-//= require vuex
 //= require vue-router
 //= require oauth
 //= require site
