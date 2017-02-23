@@ -6,6 +6,8 @@
 3. Vue.js: is used to build a client side one page javascript application which imitates a client requesting resources.
 4. ActiveAdmin: quick admin panel builder.
 
+*`Vuejs` and `grape` is drawing a lot of attetions, recently. So I decided giving them a try with this project instead of `reactjs` + `Rails` as before. And this is the first time I've ever tried on these two, might took me some time to read the documents. :)*
+
 ####Local Installation 
 `bundle install`
 `rake db:migrate`
@@ -19,6 +21,7 @@
 
 ####API 
 Enabled authentication grant types:
+
 1. **password**: which is used by this JS application, and also can be used for iOS or android applications developed by trusted entities (only).
 2. **authorization_code**
 3. **client_credentials**
