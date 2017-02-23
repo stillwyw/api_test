@@ -24,13 +24,21 @@ Enabled authentication grant types:
 3. **client_credentials**
 
 **APIs**:
+
 Current API base url: `http://conichiwa.herokuapp.com/api/v0`
+
 **Public APIs:**
+
 GET:`/precheckin_requests`: returns all precheckin_requests as a public open api, **when logged in with a resource_owner, it returns checkins of this resource owner**.
+
 GET:`/precheckin_requests/:id`: single precheckin with it's `:id`. Publicly available.
+
 **Need authorization:**
+
 GET`/user`: returns resource owner basic profile.
+
 GET: `/users/:user_id/precheckin_requests`: returns a specific user's precheckin_requests
+
 POST:`/users/:user_id/precheckin_requests`: Creates a precheckin_request for specific user.
 
 
