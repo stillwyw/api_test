@@ -100,7 +100,7 @@ Doorkeeper.configure do
   # before enabling:
   #   http://tools.ietf.org/html/rfc6819#section-4.4.2
   #   http://tools.ietf.org/html/rfc6819#section-4.4.3
-  #
+  # ENABLING PASSWORD AUTHORIZATION FOR OWN CLIENT APPLICATIONS, SUCH AS IOS, ANDROID, ....
   grant_flows %w(authorization_code client_credentials password)
 
   # Under some circumstances you might want to have applications auto-approved,
