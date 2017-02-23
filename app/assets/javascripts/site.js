@@ -71,7 +71,8 @@ var ready = function() {
             precheckin_request: {
               arrival_date: self.arrival_date,
               checkout_date: self.checkout_date,
-              hotel: self.hotel.name
+              hotel: self.hotel.name,
+              hotel_id: self.hotel.id
             }
           }
         }).done(function() {

@@ -11,7 +11,7 @@ module API
       
       helpers do
         def precheckin_request_params
-          ActionController::Parameters.new(params).require(:precheckin_request).permit(:hotel, :city, :arrival_date, :checkout_date)
+          ActionController::Parameters.new(params).require(:precheckin_request).permit(:hotel, :hotel_id, :city, :arrival_date, :checkout_date)
         end
         
         def authorize!
