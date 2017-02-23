@@ -21,6 +21,11 @@ h2.page-title{
   color: #bbb9b9;
   letter-spacing: 4px;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+    font-size: 20px;
+}
 @media (max-width:768px) {
   h2.page-title{
     font-size: 50px;
