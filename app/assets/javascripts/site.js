@@ -84,18 +84,21 @@ var ready = function() {
 
   var HotelItem = Vue.component('hotel-item', {
     props: ['hotel'],
-    template: '<div class="hotel-item" name={{hotel.id}} v-on:click="clicked">\
-                  <div class="img-wrapper">\
-                    <img v-bind:src="this.photo()" class="img-responsive"/>\
+    template: '<div class="col-md-4">\
+                  <div class="hotel-item" :style="bgImage()" :name="hotel.id" v-on:click="clicked">\
+                    <div class="img-overlay"></div>\
+                    <h4>{{hotel.name}}</h4>\
                   </div>\
-                  <h4>{{hotel.name}}</h4>\
                </div>',
     methods: {
+      bgImage: function () {
+        return 'background-image: url("'+ this.photo() +'");}'
+      },
       photo: function() {
         if (this.hotel.photos) {
           return this.hotel.photos[0].getUrl({ 'maxWidth': 600, 'maxHeight': 800 });
         }else{
-          return ''
+          return 'http://doubletree3.hilton.com/resources/media/dt/TERHIDT/en_US/img/shared/full_page_image_gallery/main/DT_hotelspa2_14_677x380_FitToBoxSmallDimension_Center.jpg'
         }
       },
       clicked: function() {

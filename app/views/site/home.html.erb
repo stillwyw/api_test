@@ -31,7 +31,7 @@
   </div>
   <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-3">
+        <div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1">
             <router-view></router-view>
         </div>
       </div>
@@ -145,7 +145,7 @@
 <script type="text/x-template" id="user-page">
   <transition name="component-fade" mode="out-in">
     <div>
-      <h2 class="page-header">Your pre-checkin requests</h2>
+      <h2 class="page-title">checkins</h2>
       <precheckin-item v-for="checkin in checkins" v-bind:checkin="checkin"></precheckin-item>
     </div>
   </transition>
@@ -153,8 +153,8 @@
 
 <script type="text/x-template" id="home-page">
   <transition name="component-fade" mode="out-in">
-    <div>
-      <h2 class="page-header">Hotels</h2>
+    <div class="row">
+      <h2 class="page-title">Hotels</h2>
       <hotel-item v-for="hotel in hotels" v-bind:hotel="hotel"></hotel-item>
     </div>
   </transition>
