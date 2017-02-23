@@ -16,7 +16,11 @@ h2.page-title{
   text-align: center;
   text-transform: uppercase;
 }
-
+.navbar-default .navbar-brand {
+  font-family: 'Russo One', sans-serif;
+  color: #bbb9b9;
+  letter-spacing: 4px;
+}
 @media (max-width:768px) {
   h2.page-title{
     font-size: 50px;
