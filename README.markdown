@@ -44,4 +44,5 @@ GET: `/users/:user_id/precheckin_requests`: returns a specific user's precheckin
 
 POST:`/users/:user_id/precheckin_requests`: Creates a precheckin_request for specific user.
 
-
+####Heroku app
+Before testing, you might want to create a user on http://conichiwa.herokuapp.com/users/sign_up . You can find this link to lower right on the home page. Admin panel is accessable by http://conichiwa.herokuapp.com/admin with user `admin@example.com` password `password`.
